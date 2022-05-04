@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorld {
     @RequestMapping("/hello")
     public String hello(){
-        return "hello world，i am jiangyunhua ,jiang tian v5.0";
+        return "hello world，i am jiangyunhua ,jiang tian v6.0";
     }
 
 }
