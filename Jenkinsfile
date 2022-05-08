@@ -8,7 +8,6 @@ pipeline {
     stages {
         stage('拉起git仓库代码') {
             steps {
-                //checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/jiangyunhua/testjenkins.git']]])
                 echo '拉起git仓库代码成功2'
             }
         }
