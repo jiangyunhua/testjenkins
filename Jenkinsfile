@@ -9,7 +9,7 @@ pipeline {
         stage('拉取git仓库代码') {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '${tag}']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/jiangyunhua/testjenkins.git']]])
-                echo '拉起git仓库代码成功2'
+                echo '拉取git仓库代码成功2'
             }
         }
         stage('通过maven构建项目') {
