@@ -45,6 +45,9 @@ pipeline {
         }
         stage('通过publish over ssh 通知目标服务器') {
             steps {
+                sshPublisher(publishers: [sshPublisherDesc(configName: 'client-146', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''cd /usr/local/test/shell
+                chmod a+x deploy.sh
+                deploy.sh  192.168.1.135:80 repo mytest $tag  $port''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'shell/*.sh')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
                 echo '通过publish over ssh 通知目标服务器成功'
             }
         }
