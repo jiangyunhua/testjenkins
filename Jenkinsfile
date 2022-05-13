@@ -48,7 +48,7 @@ pipeline {
             steps {
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'client-146', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''cd /usr/local/test/shell
                 chmod a+x deploy.sh''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'shell/*.sh')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
-                sshPublisher(publishers: [sshPublisherDesc(configName: 'client-146', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'cd /usr/local/test/shell/deploy.sh  192.168.1.135:80 repo mytest $tag  $port', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+                sshPublisher(publishers: [sshPublisherDesc(configName: 'client-146', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: "/usr/local/test/shell/deploy.sh  192.168.1.135:80 repo mytest $tag $port", execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
                 echo '通过publish over ssh 通知目标服务器成功'
             }
         }
